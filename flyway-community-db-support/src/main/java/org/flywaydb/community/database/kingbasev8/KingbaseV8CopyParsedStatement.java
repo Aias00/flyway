@@ -72,10 +72,10 @@ public class KingbaseV8CopyParsedStatement extends ParsedSqlStatement {
             Connection connection = jdbcTemplate.getConnection();
             ClassLoader classLoader = connection.getClass().getClassLoader();
 
-            Class<?> baseConnectionClass = classLoader.loadClass("org.kingbase8.core.BaseConnection");
+            Class<?> baseConnectionClass = classLoader.loadClass("com.kingbase8.core.BaseConnection");
             baseConnection = connection.unwrap(baseConnectionClass);
 
-            Class<?> copyManagerClass = classLoader.loadClass("org.kingbase8.copy.CopyManager");
+            Class<?> copyManagerClass = classLoader.loadClass("com.kingbase8.copy.CopyManager");
             Constructor<?> copyManagerConstructor = copyManagerClass.getConstructor(baseConnectionClass);
             copyManagerCopyInMethod = copyManagerClass.getMethod("copyIn", String.class, Reader.class);
 
