@@ -119,7 +119,7 @@ public class FlywayExecutor {
 
 
 
-        VersionPrinter.printVersion();
+//        VersionPrinter.printVersion();
         
         StatementInterceptor statementInterceptor = null;
 
